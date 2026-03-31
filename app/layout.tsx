@@ -2,10 +2,13 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Nunito_Sans, Raleway } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import Footer from "@/components/layouts/footer";
+import Navbar from "@/components/layouts/navbar";
+import { CartProvider } from "@/contexts/CartContext";
 
-const ralewayHeading = Raleway({subsets:['latin'],variable:'--font-heading'});
+const ralewayHeading = Raleway({ subsets: ['latin'], variable: '--font-heading' });
 
-const nunitoSans = Nunito_Sans({subsets:['latin'],variable:'--font-sans'});
+const nunitoSans = Nunito_Sans({ subsets: ['latin'], variable: '--font-sans' });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +35,12 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", nunitoSans.variable, ralewayHeading.variable)}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <CartProvider  >
+        <Navbar />
+
+        <body className="min-h-full flex flex-col">{children}</body>
+        <Footer />
+      </CartProvider>
     </html>
   );
 }
