@@ -39,7 +39,7 @@ const product = {
     fit: "Regular Fit, True to Size",
     care: "Dry Clean Only",
     sizes: ["S", "M", "L", "XL", "XXL"],
-    colors: ["Gold", "Maroon", "Navy Blue", "Emerald Green"],
+    colors: ["amber-600", "Maroon", "Navy Blue", "Emerald Green"],
     images: [
         "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1974&auto=format", // nature lake
         "https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1974&auto=format", // city skyline
@@ -113,7 +113,7 @@ const AccordionItem = ({ title, children }: { title: string; children: React.Rea
         <div className="border-b border-charcoal/10">
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-full py-4 flex justify-between items-center text-left hover:text-gold transition-colors duration-300"
+                className="w-full py-4 flex justify-between items-center text-left hover:text-amber-600 transition-colors duration-300"
             >
                 <span className="font-medium text-charcoal">{title}</span>
                 {isOpen ? <FaChevronUp size={14} /> : <FaChevronDown size={14} />}
@@ -193,8 +193,8 @@ const ImageGallery = ({ images }: { images: string[] }) => {
                         key={idx}
                         onClick={() => setSelectedImage(idx)}
                         className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all duration-300 ${selectedImage === idx
-                            ? 'border-gold shadow-lg'
-                            : 'border-transparent hover:border-gold/50'
+                            ? 'border-amber-600 shadow-lg'
+                            : 'border-transparent hover:border-amber-600/50'
                             }`}
                     >
                         <Image
@@ -219,8 +219,8 @@ const SizeSelector = ({ sizes, selectedSize, onSelect }: any) => {
                     key={size}
                     onClick={() => onSelect(size)}
                     className={`w-12 h-12 rounded-lg border-2 transition-all duration-300 ${selectedSize === size
-                        ? 'border-gold bg-gold text-charcoal font-medium'
-                        : 'border-charcoal/20 hover:border-gold text-charcoal'
+                        ? 'border-amber-600 bg-amber-600 text-charcoal font-medium'
+                        : 'border-charcoal/20 hover:border-amber-600 text-charcoal'
                         }`}
                 >
                     {size}
@@ -233,7 +233,7 @@ const SizeSelector = ({ sizes, selectedSize, onSelect }: any) => {
 // Main Product Page Component
 export default function ProductPage() {
     const [selectedSize, setSelectedSize] = useState('M');
-    const [selectedColor, setSelectedColor] = useState('Gold');
+    const [selectedColor, setSelectedColor] = useState('amber-600');
     const [quantity, setQuantity] = useState(1);
     const [isWishlisted, setIsWishlisted] = useState(false);
     const [isAddingToCart, setIsAddingToCart] = useState(false);
@@ -429,7 +429,7 @@ export default function ProductPage() {
                     >
                         {/* Category */}
                         <div className="mb-4">
-                            <span className="text-xs tracking-[0.2em] uppercase text-gold">
+                            <span className="text-xs tracking-[0.2em] uppercase text-amber-600">
                                 {product.category}
                             </span>
                         </div>
@@ -444,16 +444,16 @@ export default function ProductPage() {
                             <div className="flex items-center gap-1">
                                 {[...Array(5)].map((_, i) => (
                                     i < Math.floor(product.rating) ? (
-                                        <FaStar key={i} size={14} className="text-gold" />
+                                        <FaStar key={i} size={14} className="text-amber-600" />
                                     ) : (
-                                        <FaRegStar key={i} size={14} className="text-gold/30" />
+                                        <FaRegStar key={i} size={14} className="text-amber-600/30" />
                                     )
                                 ))}
                             </div>
                             <span className="text-sm text-muted-gray">
                                 {product.rating} ({product.reviews} reviews)
                             </span>
-                            <MdVerified size={14} className="text-gold" />
+                            <MdVerified size={14} className="text-amber-600" />
                         </div>
 
                         {/* Price */}
@@ -482,7 +482,7 @@ export default function ProductPage() {
                         <div className="mb-6">
                             <div className="flex justify-between items-center mb-3">
                                 <label className="text-sm font-medium text-charcoal">Select Size</label>
-                                <button className="text-xs text-gold hover:text-gold/80 transition-colors">
+                                <button className="text-xs text-amber-600 hover:text-amber-600/80 transition-colors">
                                     Size Guide
                                 </button>
                             </div>
@@ -504,8 +504,8 @@ export default function ProductPage() {
                                         key={color}
                                         onClick={() => setSelectedColor(color)}
                                         className={`px-4 py-2 rounded-lg border-2 transition-all duration-300 ${selectedColor === color
-                                            ? 'border-gold bg-gold/10 text-gold'
-                                            : 'border-charcoal/20 hover:border-gold text-charcoal'
+                                            ? 'border-amber-600 bg-amber-600/10 text-amber-600'
+                                            : 'border-charcoal/20 hover:border-amber-600 text-charcoal'
                                             }`}
                                     >
                                         {color}
@@ -522,14 +522,14 @@ export default function ProductPage() {
                             <div className="flex items-center gap-3">
                                 <button
                                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                                    className="w-10 h-10 rounded-lg border border-charcoal/20 flex items-center justify-center hover:border-gold hover:text-gold transition-all duration-300"
+                                    className="w-10 h-10 rounded-lg border border-charcoal/20 flex items-center justify-center hover:border-amber-600 hover:text-amber-600 transition-all duration-300"
                                 >
                                     <FaMinus size={12} />
                                 </button>
                                 <span className="w-12 text-center font-medium">{quantity}</span>
                                 <button
                                     onClick={() => setQuantity(quantity + 1)}
-                                    className="w-10 h-10 rounded-lg border border-charcoal/20 flex items-center justify-center hover:border-gold hover:text-gold transition-all duration-300"
+                                    className="w-10 h-10 rounded-lg border border-charcoal/20 flex items-center justify-center hover:border-amber-600 hover:text-amber-600 transition-all duration-300"
                                 >
                                     <FaPlus size={12} />
                                 </button>
@@ -541,7 +541,7 @@ export default function ProductPage() {
                             <button
                                 onClick={handleAddToCart}
                                 disabled={isAddingToCart}
-                                className="flex-1 py-3 bg-charcoal text-cream rounded-lg text-sm font-medium tracking-wide transition-all duration-300 hover:bg-gold hover:text-charcoal disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 group"
+                                className="flex-1 py-3 bg-charcoal text-cream rounded-lg text-sm font-medium tracking-wide transition-all duration-300 hover:bg-amber-600 hover:text-charcoal disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 group"
                             >
                                 {isAddingToCart ? (
                                     <>
@@ -558,12 +558,12 @@ export default function ProductPage() {
 
                             <button
                                 onClick={handleWishlist}
-                                className="px-4 py-3 rounded-lg border border-charcoal/20 hover:border-gold transition-all duration-300 group"
+                                className="px-4 py-3 rounded-lg border border-charcoal/20 hover:border-amber-600 transition-all duration-300 group"
                             >
                                 {isWishlisted ? (
-                                    <FaHeart size={18} className="text-gold" />
+                                    <FaHeart size={18} className="text-amber-600" />
                                 ) : (
-                                    <FaRegHeart size={18} className="text-charcoal group-hover:text-gold" />
+                                    <FaRegHeart size={18} className="text-charcoal group-hover:text-amber-600" />
                                 )}
                             </button>
                         </div>
@@ -572,7 +572,7 @@ export default function ProductPage() {
                         <button
                             onClick={handleBuyNow}
                             disabled={isBuyingNow}
-                            className="w-full py-3 bg-transparent border-2 border-charcoal text-charcoal rounded-lg text-sm font-medium tracking-wide transition-all duration-300 hover:bg-gold hover:border-gold hover:text-charcoal mb-6 flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="w-full py-3 bg-transparent border-2 border-charcoal text-charcoal rounded-lg text-sm font-medium tracking-wide transition-all duration-300 hover:bg-amber-600 hover:border-amber-600 hover:text-charcoal mb-6 flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                             {isBuyingNow ? (
                                 <>
@@ -590,28 +590,28 @@ export default function ProductPage() {
                         {/* Delivery Info */}
                         <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-charcoal/5 rounded-xl">
                             <div className="flex items-center gap-3">
-                                <FaTruck size={18} className="text-gold" />
+                                <FaTruck size={18} className="text-amber-600" />
                                 <div>
                                     <p className="text-xs font-medium text-charcoal">Free Shipping</p>
                                     <p className="text-xs text-muted-gray">On orders ₹2499+</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-3">
-                                <FaUndo size={18} className="text-gold" />
+                                <FaUndo size={18} className="text-amber-600" />
                                 <div>
                                     <p className="text-xs font-medium text-charcoal">Easy Returns</p>
                                     <p className="text-xs text-muted-gray">15 days policy</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-3">
-                                <FaShieldAlt size={18} className="text-gold" />
+                                <FaShieldAlt size={18} className="text-amber-600" />
                                 <div>
                                     <p className="text-xs font-medium text-charcoal">Secure Checkout</p>
                                     <p className="text-xs text-muted-gray">100% secure</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-3">
-                                <MdVerified size={18} className="text-gold" />
+                                <MdVerified size={18} className="text-amber-600" />
                                 <div>
                                     <p className="text-xs font-medium text-charcoal">Authentic</p>
                                     <p className="text-xs text-muted-gray">Guaranteed quality</p>
@@ -653,7 +653,7 @@ export default function ProductPage() {
                             <h2 className="text-2xl md:text-3xl font-serif font-light text-charcoal">
                                 Recently Viewed
                             </h2>
-                            <div className="w-12 h-px bg-gold mx-auto mt-3" />
+                            <div className="w-12 h-px bg-amber-600 mx-auto mt-3" />
                         </div>
 
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-6">
@@ -674,7 +674,7 @@ export default function ProductPage() {
                                             className="object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
                                     </div>
-                                    <h3 className="font-serif text-sm font-light text-charcoal group-hover:text-gold transition-colors line-clamp-1">
+                                    <h3 className="font-serif text-sm font-light text-charcoal group-hover:text-amber-600 transition-colors line-clamp-1">
                                         {item.name}
                                     </h3>
                                     <p className="text-charcoal font-medium text-sm">₹{item.price.toLocaleString()}</p>
@@ -690,7 +690,7 @@ export default function ProductPage() {
                         <h2 className="text-2xl md:text-3xl font-serif font-light text-charcoal">
                             You May Also Like
                         </h2>
-                        <div className="w-12 h-px bg-gold mx-auto mt-3" />
+                        <div className="w-12 h-px bg-amber-600 mx-auto mt-3" />
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -711,7 +711,7 @@ export default function ProductPage() {
                                         className="object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
                                 </div>
-                                <h3 className="font-serif text-lg font-light text-charcoal group-hover:text-gold transition-colors">
+                                <h3 className="font-serif text-lg font-light text-charcoal group-hover:text-amber-600 transition-colors">
                                     {product.name}
                                 </h3>
                                 <div className="flex items-center gap-2 mt-1">
@@ -723,7 +723,7 @@ export default function ProductPage() {
                                     )}
                                 </div>
                                 <div className="flex items-center gap-1 mt-1">
-                                    <FaStar size={12} className="text-gold" />
+                                    <FaStar size={12} className="text-amber-600" />
                                     <span className="text-xs text-muted-gray">{product.rating}</span>
                                 </div>
                             </motion.div>
