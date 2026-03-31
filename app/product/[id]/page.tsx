@@ -180,7 +180,7 @@ const ImageGallery = ({ images }: { images: string[] }) => {
                     priority
                 />
 
-                <div className="absolute top-4 right-4 p-2 bg-cream/90 backdrop-blur-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute top-4 right-4 p-2 bg-[#FDFBD4]/90 backdrop-blur-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <FaExpand size={16} className="text-charcoal" />
                 </div>
             </div>
@@ -394,7 +394,7 @@ export default function ProductPage() {
     };
 
     return (
-        <div className="min-h-screen bg-cream">
+        <div className="min-h-screen bg-white">
             {/* Toast Notification */}
             <AnimatePresence>
                 {showToast && (
@@ -541,11 +541,11 @@ export default function ProductPage() {
                             <button
                                 onClick={handleAddToCart}
                                 disabled={isAddingToCart}
-                                className="flex-1 py-3 bg-charcoal text-cream rounded-lg text-sm font-medium tracking-wide transition-all duration-300 hover:bg-amber-600 hover:text-charcoal disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 group"
+                                className="flex-1 py-3 bg-charcoal text-white rounded-lg text-sm font-medium tracking-wide transition-all duration-300 hover:bg-amber-600 hover:text-charcoal disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 group"
                             >
                                 {isAddingToCart ? (
                                     <>
-                                        <div className="w-4 h-4 border-2 border-cream border-t-transparent rounded-full animate-spin" />
+                                        <div className="w-4 h-4 border-2 border-[#FDFBD4] border-t-transparent rounded-full animate-spin" />
                                         <span>Adding...</span>
                                     </>
                                 ) : (
@@ -733,15 +733,15 @@ export default function ProductPage() {
             </div>
 
             {/* Sticky Add-to-Cart Bar (Mobile) */}
-            <div className="fixed bottom-0 left-0 right-0 bg-cream border-t border-charcoal/10 p-4 lg:hidden z-50 shadow-lg">
+            <div className="fixed bottom-0 left-0 right-0 bg-[#FDFBD4] border-t border-charcoal/10 p-4 lg:hidden z-50 shadow-lg">
                 <div className="flex gap-3">
                     <button
                         onClick={handleAddToCart}
                         disabled={isAddingToCart}
-                        className="flex-1 py-3 bg-charcoal text-cream rounded-lg text-sm font-medium flex items-center justify-center gap-2 disabled:opacity-50"
+                        className="flex-1 py-3 bg-charcoal text-black rounded-lg text-sm font-medium flex items-center justify-center gap-2 disabled:opacity-50"
                     >
                         {isAddingToCart ? (
-                            <div className="w-4 h-4 border-2 border-cream border-t-transparent rounded-full animate-spin" />
+                            <div className="w-4 h-4 border-2 border-[#FDFBD4] border-t-transparent rounded-full animate-spin" />
                         ) : (
                             <>
                                 <FaShoppingBag size={14} />
@@ -752,7 +752,7 @@ export default function ProductPage() {
                     <button
                         onClick={handleBuyNow}
                         disabled={isBuyingNow}
-                        className="flex-1 py-3 border-2 border-charcoal text-charcoal rounded-lg text-sm font-medium flex items-center justify-center gap-2 disabled:opacity-50"
+                        className="flex-1 py-3 border-2 bg-amber-400 border-charcoal text-charcoal rounded-lg text-sm font-medium flex items-center justify-center gap-2 disabled:opacity-50"
                     >
                         {isBuyingNow ? (
                             <div className="w-4 h-4 border-2 border-charcoal border-t-transparent rounded-full animate-spin" />
