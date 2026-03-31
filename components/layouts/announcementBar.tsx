@@ -19,13 +19,17 @@ export default function AnnouncementBar({
   message = DEFAULT_MESSAGE,
   dismissDuration = 7 
 }: AnnouncementBarProps) {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(true); // Default to true initially
+  const [isMounted, setIsMounted] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const marqueeRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  // Check localStorage for dismissal preference on mount
+  // Handle client-side initialization after mount
   useEffect(() => {
+    setIsMounted(true);
+    
+    // Check localStorage for dismissal preference
     if (dismissible) {
       const dismissed = localStorage.getItem('announcementBarDismissed');
       const dismissedAt = localStorage.getItem('announcementBarDismissedAt');
@@ -35,7 +39,7 @@ export default function AnnouncementBar({
         const now = new Date();
         const daysDiff = (now.getTime() - dismissedDate.getTime()) / (1000 * 60 * 60 * 24);
         
-        // If within duration, keep hidden
+        // If within duration, hide the bar
         if (daysDiff < dismissDuration) {
           setIsVisible(false);
         } else {
@@ -46,6 +50,28 @@ export default function AnnouncementBar({
       }
     }
   }, [dismissible, dismissDuration]);
+
+  // Clean up expired localStorage data when visible state changes
+  useEffect(() => {
+    if (!isMounted) return;
+    
+    if (dismissible && isVisible) {
+      const dismissed = localStorage.getItem('announcementBarDismissed');
+      const dismissedAt = localStorage.getItem('announcementBarDismissedAt');
+      
+      if (dismissed === 'true' && dismissedAt) {
+        const dismissedDate = new Date(parseInt(dismissedAt));
+        const now = new Date();
+        const daysDiff = (now.getTime() - dismissedDate.getTime()) / (1000 * 60 * 60 * 24);
+        
+        // Clear expired dismissal
+        if (daysDiff >= dismissDuration) {
+          localStorage.removeItem('announcementBarDismissed');
+          localStorage.removeItem('announcementBarDismissedAt');
+        }
+      }
+    }
+  }, [dismissible, dismissDuration, isVisible, isMounted]);
 
   // Handle dismissal
   const handleDismiss = () => {
@@ -76,6 +102,16 @@ export default function AnnouncementBar({
     );
   };
 
+  // Don't render anything during SSR to avoid hydration issues
+  if (!isMounted) {
+    // Return a placeholder with same dimensions to prevent layout shift
+    return (
+      <div className="relative w-full bg-charcoal overflow-hidden z-50">
+        <div className="relative h-10 md:h-10.5 w-full" />
+      </div>
+    );
+  }
+
   if (!isVisible) return null;
 
   return (
@@ -85,7 +121,7 @@ export default function AnnouncementBar({
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Main Bar Container */}
-      <div className="relative h-10 md:h-[42px] w-full">
+      <div className="relative h-10 md:h-10.5 w-full">
         {/* Marquee Container */}
         <div 
           ref={marqueeRef}
@@ -99,9 +135,9 @@ export default function AnnouncementBar({
           </div>
         </div>
 
-        {/* Overlay Gradient for Smooth Edges (optional - adds premium feel) */}
-        <div className="absolute inset-y-0 left-0 w-8 md:w-12 bg-gradient-to-r from-charcoal to-transparent pointer-events-none z-10" />
-        <div className="absolute inset-y-0 right-0 w-8 md:w-12 bg-gradient-to-l from-charcoal to-transparent pointer-events-none z-10" />
+        {/* Overlay Gradient for Smooth Edges */}
+        <div className="absolute inset-y-0 left-0 w-8 md:w-12 bg-linear-to-r from-charcoal to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-y-0 right-0 w-8 md:w-12 bg-linear-to-l from-charcoal to-transparent pointer-events-none z-10" />
 
         {/* Dismiss Button */}
         {dismissible && (

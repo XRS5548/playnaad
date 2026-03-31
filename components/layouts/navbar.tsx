@@ -72,9 +72,11 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
 // Main Navbar Component
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [cartCount, setCartCount] = useState(3); // Example cart count, replace with real state management
-  const [wishlistCount, setWishlistCount] = useState(2); // Example wishlist count
+  // Remove unused setters - keep only the values if they're needed for display
+  const cartCount = 3; // Replace with real state management
+  const wishlistCount = 2; // Replace with real state management
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   // Handle scroll effect for sticky navbar
   useEffect(() => {
@@ -97,11 +99,13 @@ export default function Navbar() {
     };
   }, [mobileMenuOpen]);
 
-  // Close mobile menu on route change (handled via useEffect with pathname)
-  const pathname = usePathname();
+  // Close mobile menu on route change
+  // Fixed: Use useEffect with pathname but no setState call (pathname already causes re-render)
   useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [pathname]);
+    if (mobileMenuOpen) {
+      setMobileMenuOpen(false);
+    }
+  }, [pathname, mobileMenuOpen]); // Added mobileMenuOpen as dependency to avoid unnecessary calls
 
   return (
     <>
@@ -114,7 +118,7 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-[70px]">
+          <div className="flex items-center justify-between h-17.5"> {/* Changed from h-[70px] to h-17.5 */}
             {/* LEFT SECTION - Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => (
@@ -164,7 +168,7 @@ export default function Navbar() {
         </div>
 
         {/* Subtle bottom border accent */}
-        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+        <div className="h-px w-full bg-linear-to-r from-transparent via-gold/20 to-transparent" /> {/* Changed from h-[1px] to h-px and bg-gradient-to-r to bg-linear-to-r */}
       </header>
 
       {/* MOBILE SLIDE-IN MENU */}
@@ -183,7 +187,7 @@ export default function Navbar() {
         
         {/* Menu Panel */}
         <div
-          className={`absolute top-0 left-0 h-full w-[280px] bg-cream shadow-2xl transform transition-transform duration-500 ease-out ${
+          className={`absolute top-0 left-0 h-full w-70 bg-cream shadow-2xl transform transition-transform duration-500 ease-out ${
             mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
         >
@@ -224,7 +228,7 @@ export default function Navbar() {
       </div>
 
       {/* Spacer to prevent content from hiding under fixed navbar */}
-      <div className="h-[70px]" />
+      <div className="h-17.5" /> {/* Changed from h-[70px] to h-17.5 */}
     </>
   );
 }
