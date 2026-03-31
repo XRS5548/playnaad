@@ -143,7 +143,7 @@ export default function AnnouncementBar({
         {dismissible && (
           <button
             onClick={handleDismiss}
-            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 p-1.5 text-soft-gold/70 hover:text-soft-gold transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-soft-gold/50 rounded-full"
+            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 p-1.5 text-soft-amber-600/70 hover:text-soft-amber-600 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-soft-amber-600/50 rounded-full"
             aria-label="Dismiss announcement"
           >
             <X size={14} strokeWidth={1.5} />

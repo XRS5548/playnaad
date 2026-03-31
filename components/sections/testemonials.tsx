@@ -80,7 +80,7 @@ const StarRating = ({ rating }: { rating: number }) => {
         <Star
           key={i}
           size={14}
-          className={`${i < rating ? 'fill-gold text-gold' : 'text-gold/30'} transition-colors duration-300`}
+          className={`${i < rating ? 'fill-amber-600 text-amber-600' : 'text-amber-600/30'} transition-colors duration-300`}
           strokeWidth={1.5}
         />
       ))}
@@ -134,7 +134,7 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: typeof testimoni
 
       {/* Quote Icon */}
       <div className="mb-4">
-        <Quote size={28} className="text-gold/40" strokeWidth={1.5} />
+        <Quote size={28} className="text-amber-600/40" strokeWidth={1.5} />
       </div>
 
       {/* Review Text - Fixed unescaped quotes */}
@@ -146,7 +146,7 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: typeof testimoni
       <div className="flex items-center gap-4 pt-4 border-t border-charcoal/10">
         {/* Avatar */}
         <div className="relative shrink-0"> {/* Changed from flex-shrink-0 */}
-          <div className="w-12 h-12 rounded-full overflow-hidden bg-linear-to-br from-gold/20 to-gold/5"> {/* Changed from bg-gradient-to-br */}
+          <div className="w-12 h-12 rounded-full overflow-hidden bg-linear-to-br from-amber-600/20 to-amber-600/5"> {/* Changed from bg-gradient-to-br */}
             {testimonial.avatar ? (
               <Image
                 src={testimonial.avatar}
@@ -156,13 +156,13 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: typeof testimoni
                 sizes="48px"
               />
             ) : (
-              <div className="w-full h-full flex items-center justify-center text-gold font-medium">
+              <div className="w-full h-full flex items-center justify-center text-amber-600 font-medium">
                 {testimonial.initials}
               </div>
             )}
           </div>
           {/* Decorative Ring */}
-          <div className="absolute inset-0 rounded-full border border-gold/20 group-hover:border-gold/40 transition-all duration-300" />
+          <div className="absolute inset-0 rounded-full border border-amber-600/20 group-hover:border-amber-600/40 transition-all duration-300" />
         </div>
 
         {/* Name and Location */}
@@ -172,7 +172,7 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: typeof testimoni
           </h4>
           <div className="flex items-center gap-2 text-xs text-muted-gray">
             <span>{testimonial.location}</span>
-            <span className="w-1 h-1 rounded-full bg-gold/40" />
+            <span className="w-1 h-1 rounded-full bg-amber-600/40" />
             <span>{testimonial.date}</span>
           </div>
         </div>
@@ -180,7 +180,7 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: typeof testimoni
 
       {/* Hover Glow Effect */}
       <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-        <div className="absolute inset-0 bg-linear-to-br from-gold/5 via-transparent to-transparent rounded-2xl" /> {/* Changed from bg-gradient-to-br */}
+        <div className="absolute inset-0 bg-linear-to-br from-amber-600/5 via-transparent to-transparent rounded-2xl" /> {/* Changed from bg-gradient-to-br */}
       </div>
     </motion.div>
   );
@@ -232,18 +232,18 @@ export default function TestimonialsSection() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.03, scale: 1 }}
           transition={{ duration: 1.5 }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 rounded-full border border-gold/20" // Changed from w-[800px] h-[800px]
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 rounded-full border border-amber-600/20" // Changed from w-[800px] h-[800px]
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.02, scale: 1 }}
           transition={{ duration: 1.5, delay: 0.3 }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-250 h-250 rounded-full border border-gold/10" // Changed from w-[1000px] h-[1000px]
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-250 h-250 rounded-full border border-amber-600/10" // Changed from w-[1000px] h-[1000px]
         />
         
         {/* Subtle Gradient Orbs */}
-        <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-gold/5 blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-gold/5 blur-3xl" />
+        <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-amber-600/5 blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-amber-600/5 blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -255,11 +255,11 @@ export default function TestimonialsSection() {
           className="text-center mb-12 md:mb-16"
         >
           <motion.div variants={headerVariants} className="inline-flex items-center gap-3 mb-3">
-            <div className="w-8 h-px bg-gold" />
-            <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-gold font-medium">
+            <div className="w-8 h-px bg-amber-600" />
+            <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-amber-600 font-medium">
               Real Reviews
             </span>
-            <div className="w-8 h-px bg-gold" />
+            <div className="w-8 h-px bg-amber-600" />
           </motion.div>
           
           <motion.h2
@@ -267,13 +267,13 @@ export default function TestimonialsSection() {
             className="text-3xl md:text-4xl lg:text-5xl font-serif font-light text-charcoal"
           >
             What our{' '}
-            <span className="relative italic text-gold font-medium inline-block">
+            <span className="relative italic text-amber-600 font-medium inline-block">
               community
               <motion.span
                 initial={{ width: 0, opacity: 0 }}
                 animate={isInView ? { width: '100%', opacity: 1 } : { width: 0, opacity: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="absolute -bottom-2 left-0 h-0.5 bg-linear-to-r from-gold/0 via-gold to-gold/0" // Changed from h-[2px] and bg-gradient-to-r
+                className="absolute -bottom-2 left-0 h-0.5 bg-linear-to-r from-amber-600/0 via-amber-600 to-amber-600/0" // Changed from h-[2px] and bg-gradient-to-r
               />
             </span>
             <br />
@@ -304,15 +304,15 @@ export default function TestimonialsSection() {
         >
           <div className="flex flex-wrap justify-center gap-8 text-sm text-muted-gray">
             <div className="flex items-center gap-2">
-              <Star size={16} className="fill-gold text-gold" />
+              <Star size={16} className="fill-amber-600 text-amber-600" />
               <span>4.9/5 Average Rating</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-1 h-1 rounded-full bg-gold" />
+              <div className="w-1 h-1 rounded-full bg-amber-600" />
               <span>1000+ Verified Reviews</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-1 h-1 rounded-full bg-gold" />
+              <div className="w-1 h-1 rounded-full bg-amber-600" />
               <span>Trusted by 40K+ Customers</span>
             </div>
           </div>
@@ -320,7 +320,7 @@ export default function TestimonialsSection() {
       </div>
 
       {/* Bottom Decorative Border */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-gold/20 to-transparent" /> {/* Changed from bg-gradient-to-r */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-amber-600/20 to-transparent" /> {/* Changed from bg-gradient-to-r */}
     </section>
   );
 }

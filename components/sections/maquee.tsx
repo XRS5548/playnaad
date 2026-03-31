@@ -54,7 +54,7 @@ export default function Marquee({
   speedUpOnHover = true,
   items = DEFAULT_ITEMS,
   separator = 'star',
-  textColor = 'text-gold',
+  textColor = 'text-amber-600',
   bgColor = 'bg-charcoal',
   showGradientEdges = true,
   fontWeight = 'light',
@@ -93,7 +93,7 @@ export default function Marquee({
   // Create the marquee content with all dependencies properly included
   const renderContent = useCallback(() => {
     const textClasses = `text-sm md:text-base tracking-[0.1em] ${getFontWeight()} italic whitespace-nowrap transition-all duration-300 ${
-      isHovered ? 'text-gold/90' : textColor
+      isHovered ? 'text-amber-600/90' : textColor
     } ${uppercase ? 'uppercase' : ''}`;
 
     return (
@@ -119,7 +119,7 @@ export default function Marquee({
   return (
     <div 
       className={`relative w-full ${bgColor} overflow-hidden py-3 md:py-4 border-y border-white/5 transition-all duration-300 ${
-        isHovered ? 'border-gold/20' : 'border-white/5'
+        isHovered ? 'border-amber-600/20' : 'border-white/5'
       }`}
       onMouseEnter={() => {
         if (pauseOnHover) setIsHovered(true);
@@ -137,7 +137,7 @@ export default function Marquee({
       )}
       
       {/* Subtle Overlay Glow on Hover */}
-      <div className={`absolute inset-0 bg-linear-to-r from-gold/0 via-gold/5 to-gold/0 opacity-0 transition-opacity duration-500 pointer-events-none ${
+      <div className={`absolute inset-0 bg-linear-to-r from-amber-600/0 via-amber-600/5 to-amber-600/0 opacity-0 transition-opacity duration-500 pointer-events-none ${
         isHovered ? 'opacity-100' : ''
       }`} /> {/* Changed from bg-gradient-to-r */}
       

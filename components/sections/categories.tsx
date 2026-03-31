@@ -128,10 +128,10 @@ const CategoryCard = ({
             transition={{ duration: 0.3 }}
             className="absolute top-4 right-4 md:top-6 md:right-6 z-10"
           >
-            <div className="p-2 rounded-full bg-cream/10 backdrop-blur-sm border border-cream/20 group-hover:border-gold/50 transition-all duration-300">
+            <div className="p-2 rounded-full bg-cream/10 backdrop-blur-sm border border-cream/20 group-hover:border-amber-600/50 transition-all duration-300">
               <ArrowUpRight 
                 size={isLarge ? 20 : 16} 
-                className="text-cream group-hover:text-gold transition-colors duration-300" 
+                className="text-cream group-hover:text-amber-600 transition-colors duration-300" 
                 strokeWidth={1.5}
               />
             </div>
@@ -139,7 +139,7 @@ const CategoryCard = ({
           
           {/* Text Content - Bottom Left */}
           <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 text-cream z-10">
-            <div className="transform transition-transform duration-500 group-hover:-translate-y-1">
+            <div className="transform text-white/75 transition-transform duration-500 group-hover:-translate-y-1">
               <h3 className={`font-serif ${isLarge ? 'text-2xl md:text-3xl lg:text-4xl' : 'text-xl md:text-2xl'} font-light tracking-wide mb-2`}>
                 {category.name}
               </h3>
@@ -151,7 +151,7 @@ const CategoryCard = ({
               </p>
               {/* Decorative Line */}
               <motion.div 
-                className="w-8 h-px bg-gold mt-3"
+                className="w-8 h-px bg-amber-600 mt-3"
                 animate={{ width: isHovered ? 48 : 32 }}
                 transition={{ duration: 0.3 }}
               />
@@ -161,7 +161,7 @@ const CategoryCard = ({
         
         {/* Glow Effect on Hover */}
         <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none ${
-          isLarge ? 'shadow-2xl shadow-gold/20' : 'shadow-xl shadow-gold/10'
+          isLarge ? 'shadow-2xl shadow-amber-600/20' : 'shadow-xl shadow-amber-600/10'
         }`} />
       </Link>
     </motion.div>
@@ -178,8 +178,8 @@ export default function CategoriesSection() {
     <section ref={sectionRef} className="relative w-full bg-cream py-16 md:py-20 lg:py-24 overflow-hidden">
       {/* Background Decorative Element */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-amber-600/20 to-transparent" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-amber-600/20 to-transparent" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -192,22 +192,22 @@ export default function CategoriesSection() {
           className="text-center mb-12 md:mb-16"
         >
           <div className="inline-flex items-center gap-2 mb-3">
-            <Sparkles size={14} className="text-gold" />
-            <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-gold font-medium">
+            <Sparkles size={14} className="text-amber-600" />
+            <span className="text-xs md:text-sm tracking-[0.2em] uppercase text-amber-600 font-medium">
               Shop by Category
             </span>
-            <Sparkles size={14} className="text-gold" />
+            <Sparkles size={14} className="text-amber-600" />
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-light text-charcoal">
             Find your{' '}
-            <span className="relative italic text-gold font-medium inline-block">
+            <span className="relative italic text-amber-600 font-medium inline-block">
               aesthetic
               <motion.span
                 initial={{ width: 0, opacity: 0 }}
                 whileInView={{ width: '100%', opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-gold/0 via-gold to-gold/0"
+                className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-amber-600/0 via-amber-600 to-amber-600/0"
               />
             </span>
           </h2>
@@ -253,7 +253,7 @@ export default function CategoriesSection() {
         >
           <Link
             href="/collections"
-            className="group inline-flex items-center gap-2 text-sm tracking-[0.2em] uppercase text-charcoal hover:text-gold transition-colors duration-300 border-b border-transparent hover:border-gold pb-1"
+            className="group inline-flex items-center gap-2 text-sm tracking-[0.2em] uppercase text-charcoal hover:text-amber-600 transition-colors duration-300 border-b border-transparent hover:border-amber-600 pb-1"
           >
             <span>View All Collections</span>
             <ArrowUpRight 

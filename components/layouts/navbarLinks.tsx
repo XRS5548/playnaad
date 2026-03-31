@@ -89,12 +89,12 @@ export default function NavLinks() {
             {item.href ? (
               <Link
                 href={item.href}
-                className="text-sm font-medium tracking-wide hover:text-gold transition"
+                className="text-sm font-medium tracking-wide hover:text-amber-600 transition"
               >
                 {item.name}
               </Link>
             ) : (
-              <span className="text-sm font-medium tracking-wide cursor-pointer hover:text-gold transition">
+              <span className="text-sm font-medium tracking-wide cursor-pointer hover:text-amber-600 transition">
                 {item.name}
               </span>
             )}
@@ -119,7 +119,7 @@ export default function NavLinks() {
                       <li key={link.name}>
                         <Link
                           href={link.href}
-                          className="text-sm text-charcoal/70 hover:text-gold transition"
+                          className="text-sm text-charcoal/70 hover:text-amber-600 transition"
                         >
                           {link.name}
                         </Link>

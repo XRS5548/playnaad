@@ -92,13 +92,13 @@ export default function HeroSection() {
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 0.1, scale: 1 }}
           transition={{ duration: 1.5, delay: 0.5 }}
-          className="absolute -top-20 -right-20 w-80 h-80 rounded-full border-2 border-gold/20"
+          className="absolute -top-20 -right-20 w-80 h-80 rounded-full border-2 border-amber-600/20"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 0.05, scale: 1 }}
           transition={{ duration: 1.5, delay: 0.8 }}
-          className="absolute -bottom-40 -left-40 w-150 h-150 rounded-full bg-gold/5 blur-3xl" // Changed from w-[600px] h-[600px]
+          className="absolute -bottom-40 -left-40 w-150 h-150 rounded-full bg-amber-600/5 blur-3xl" // Changed from w-[600px] h-[600px]
         />
         
         {/* Subtle Grain Texture */}
@@ -126,11 +126,11 @@ export default function HeroSection() {
                 variants={itemVariants}
                 className="inline-flex items-center gap-3 mb-6"
               >
-                <div className="w-8 h-px bg-gold/60" />
-                <span className="text-xs tracking-[0.2em] uppercase text-gold font-medium">
+                <div className="w-8 h-px bg-amber-600/60" />
+                <span className="text-xs tracking-[0.2em] uppercase text-amber-600 font-medium">
                   New Collection 2025
                 </span>
-                <Sparkles size={14} className="text-gold" />
+                <Sparkles size={14} className="text-amber-600" />
               </motion.div>
 
               {/* Main Heading */}
@@ -139,13 +139,13 @@ export default function HeroSection() {
                 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-light leading-[1.1] tracking-tight text-charcoal mb-6"
               >
                 Dress in{' '}
-                <span className="relative italic text-gold font-medium inline-block">
+                <span className="relative italic text-amber-600 font-medium inline-block">
                   your
                   <motion.span
                     initial={{ width: 0 }}
                     animate={{ width: '100%' }}
                     transition={{ duration: 0.8, delay: 0.6 }}
-                    className="absolute bottom-2 left-0 h-0.5 bg-gold/30" // Changed from h-[2px]
+                    className="absolute bottom-2 left-0 h-0.5 bg-amber-600/30" // Changed from h-[2px]
                   />
                 </span>
                 <br />
@@ -174,7 +174,7 @@ export default function HeroSection() {
                 >
                   <Link
                     href="/collections"
-                    className="group inline-flex items-center justify-center px-8 py-4 bg-charcoal text-cream rounded-full text-sm font-medium tracking-wide transition-all duration-300 hover:bg-gold hover:text-charcoal shadow-lg hover:shadow-xl"
+                    className="group inline-flex items-center justify-center px-8 py-4 bg-charcoal text-cream rounded-full text-sm font-medium tracking-wide transition-all duration-300 hover:bg-amber-600 hover:text-charcoal shadow-lg hover:shadow-xl"
                   >
                     Shop Now
                     <ArrowRight
@@ -191,7 +191,7 @@ export default function HeroSection() {
                 >
                   <Link
                     href="/collections/all"
-                    className="group inline-flex items-center justify-center px-8 py-4 border-2 border-charcoal/20 text-charcoal rounded-full text-sm font-medium tracking-wide transition-all duration-300 hover:border-gold hover:text-gold bg-transparent"
+                    className="group inline-flex items-center justify-center px-8 py-4 border-2 border-charcoal/20 text-charcoal rounded-full text-sm font-medium tracking-wide transition-all duration-300 hover:border-amber-600 hover:text-amber-600 bg-transparent"
                   >
                     Explore Collection
                     <ArrowRight
@@ -209,9 +209,9 @@ export default function HeroSection() {
               >
                 <div className="flex items-center gap-6 text-xs text-muted-gray">
                   <span className="tracking-wide">ETHICALLY CRAFTED</span>
-                  <span className="w-1 h-1 rounded-full bg-gold" />
+                  <span className="w-1 h-1 rounded-full bg-amber-600" />
                   <span className="tracking-wide">SUSTAINABLE FABRICS</span>
-                  <span className="w-1 h-1 rounded-full bg-gold" />
+                  <span className="w-1 h-1 rounded-full bg-amber-600" />
                   <span className="tracking-wide">ARTISAN MADE</span>
                 </div>
               </motion.div>
@@ -250,11 +250,11 @@ export default function HeroSection() {
               <div className="absolute inset-0 bg-linear-to-t from-charcoal/20 via-transparent to-transparent lg:bg-linear-to-r lg:from-cream/10 lg:via-transparent lg:to-transparent" /> {/* Changed from bg-gradient-to-t and lg:bg-gradient-to-r */}
               
               {/* Decorative Frame */}
-              <div className="absolute inset-4 border border-gold/20 pointer-events-none opacity-0 lg:opacity-100 transition-opacity duration-700" />
+              <div className="absolute inset-4 border border-amber-600/20 pointer-events-none opacity-0 lg:opacity-100 transition-opacity duration-700" />
               
               {/* Subtle Glow Effect */}
               <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-700">
-                <div className="absolute inset-0 bg-linear-to-tr from-gold/10 via-transparent to-gold/10" /> {/* Changed from bg-gradient-to-tr */}
+                <div className="absolute inset-0 bg-linear-to-tr from-amber-600/10 via-transparent to-amber-600/10" /> {/* Changed from bg-gradient-to-tr */}
               </div>
             </motion.div>
           </motion.div>
@@ -275,7 +275,7 @@ export default function HeroSection() {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="w-px h-8 bg-gold/40"
+            className="w-px h-8 bg-amber-600/40"
           />
         </div>
       </motion.div>

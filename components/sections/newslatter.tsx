@@ -91,32 +91,32 @@ export default function NewsletterSection() {
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Subtle Gradient Background */}
-        <div className="absolute inset-0 bg-linear-to-b from-gold/5 via-transparent to-gold/5" /> {/* Changed from bg-gradient-to-b */}
+        <div className="absolute inset-0 bg-linear-to-b from-amber-600/5 via-transparent to-amber-600/5" /> {/* Changed from bg-gradient-to-b */}
         
         {/* Decorative Circles */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.03, scale: 1 }}
           transition={{ duration: 1.5 }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 rounded-full border border-gold/20" // Changed from w-[800px] h-[800px]
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 rounded-full border border-amber-600/20" // Changed from w-[800px] h-[800px]
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.02, scale: 1 }}
           transition={{ duration: 1.5, delay: 0.3 }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-250 h-250 rounded-full border border-gold/10" // Changed from w-[1000px] h-[1000px]
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-250 h-250 rounded-full border border-amber-600/10" // Changed from w-[1000px] h-[1000px]
         />
         
         {/* Floating Particles */}
         <div className="absolute top-20 left-10 opacity-30">
-          <Sparkles size={20} className="text-gold" strokeWidth={1} />
+          <Sparkles size={20} className="text-amber-600" strokeWidth={1} />
         </div>
         <div className="absolute bottom-20 right-10 opacity-30">
-          <Sparkles size={20} className="text-gold" strokeWidth={1} />
+          <Sparkles size={20} className="text-amber-600" strokeWidth={1} />
         </div>
         
         {/* Subtle Pattern Overlay */}
-        <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-gold via-gold to-transparent" /> {/* Fixed spacing */}
+        <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-amber-600 via-amber-600 to-transparent" /> {/* Fixed spacing */}
       </div>
 
       <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -133,9 +133,9 @@ export default function NewsletterSection() {
             className="flex justify-center mb-6"
           >
             <div className="inline-flex items-center gap-2">
-              <div className="w-8 h-px bg-gold" />
-              <Sparkles size={14} className="text-gold" />
-              <div className="w-8 h-px bg-gold" />
+              <div className="w-8 h-px bg-amber-600" />
+              <Sparkles size={14} className="text-amber-600" />
+              <div className="w-8 h-px bg-amber-600" />
             </div>
           </motion.div>
 
@@ -145,13 +145,13 @@ export default function NewsletterSection() {
             className="text-3xl md:text-4xl lg:text-5xl font-serif font-light text-charcoal mb-4"
           >
             Stay in the{' '}
-            <span className="relative italic text-gold font-medium inline-block">
+            <span className="relative italic text-amber-600 font-medium inline-block">
               loop
               <motion.span
                 initial={{ width: 0, opacity: 0 }}
                 animate={isInView ? { width: '100%', opacity: 1 } : { width: 0, opacity: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="absolute -bottom-2 left-0 h-0.5 bg-linear-to-r from-gold/0 via-gold to-gold/0" // Changed from h-[2px] and bg-gradient-to-r
+                className="absolute -bottom-2 left-0 h-0.5 bg-linear-to-r from-amber-600/0 via-amber-600 to-amber-600/0" // Changed from h-[2px] and bg-gradient-to-r
               />
             </span>
           </motion.h2>
@@ -179,12 +179,12 @@ export default function NewsletterSection() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your email address"
                   disabled={status === 'loading' || status === 'success'}
-                  className="w-full px-6 py-4 bg-white border border-charcoal/20 rounded-full text-charcoal placeholder-muted-gray/50 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-6 py-4 bg-white border border-charcoal/20 rounded-full text-charcoal placeholder-muted-gray/50 focus:outline-none focus:border-amber-600 focus:ring-2 focus:ring-amber-600/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 />
                 
                 {/* Input Focus Glow */}
                 <div className="absolute inset-0 rounded-full opacity-0 focus-within:opacity-100 transition-opacity duration-300 pointer-events-none">
-                  <div className="absolute inset-0 rounded-full bg-linear-to-r from-gold/10 via-gold/5 to-transparent" /> {/* Changed from bg-gradient-to-r */}
+                  <div className="absolute inset-0 rounded-full bg-linear-to-r from-amber-600/10 via-amber-600/5 to-transparent" /> {/* Changed from bg-gradient-to-r */}
                 </div>
               </div>
 
@@ -192,7 +192,7 @@ export default function NewsletterSection() {
               <button
                 type="submit"
                 disabled={status === 'loading' || status === 'success'}
-                className="group relative px-8 py-4 bg-charcoal text-cream rounded-full text-sm font-medium tracking-wide transition-all duration-300 hover:bg-gold hover:text-charcoal disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden"
+                className="group relative px-8 py-4 bg-charcoal text-cream rounded-full text-sm font-medium tracking-wide transition-all duration-300 hover:bg-amber-600 hover:text-charcoal disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   {status === 'loading' ? (
@@ -218,7 +218,7 @@ export default function NewsletterSection() {
                   initial={{ x: '-100%' }}
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="absolute inset-0 bg-gold"
+                  className="absolute inset-0 bg-amber-600"
                   style={{ display: status === 'idle' ? 'block' : 'none' }}
                 />
               </button>
@@ -260,13 +260,13 @@ export default function NewsletterSection() {
             variants={itemVariants}
             className="mt-12 pt-8"
           >
-            <div className="w-16 h-px bg-linear-to-r from-transparent via-gold/30 to-transparent mx-auto" /> {/* Changed from bg-gradient-to-r */}
+            <div className="w-16 h-px bg-linear-to-r from-transparent via-amber-600/30 to-transparent mx-auto" /> {/* Changed from bg-gradient-to-r */}
           </motion.div>
         </motion.div>
       </div>
 
       {/* Bottom Decorative Border */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-gold/20 to-transparent" /> {/* Changed from bg-gradient-to-r */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-amber-600/20 to-transparent" /> {/* Changed from bg-gradient-to-r */}
     </section>
   );
 }

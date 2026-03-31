@@ -154,7 +154,7 @@ const ProductCard = ({ product, index }: { product: Product; index: number }) =>
               </span>
             )}
             {product.badge === 'sale' && (
-              <span className="px-2 py-1 text-xs font-medium tracking-wide uppercase bg-gold text-charcoal rounded">
+              <span className="px-2 py-1 text-xs font-medium tracking-wide uppercase bg-amber-600 text-charcoal rounded">
                 Sale
               </span>
             )}
@@ -175,7 +175,7 @@ const ProductCard = ({ product, index }: { product: Product; index: number }) =>
                   e.preventDefault();
                   handleAddToCart();
                 }}
-                className="flex-1 bg-gold text-charcoal py-2 rounded-full text-sm font-medium tracking-wide hover:bg-gold/90 transition-colors flex items-center justify-center gap-2"
+                className="flex-1 bg-amber-600 text-charcoal py-2 rounded-full text-sm font-medium tracking-wide hover:bg-amber-600/90 transition-colors flex items-center justify-center gap-2"
               >
                 {isAddingToCart ? (
                   <div className="w-4 h-4 border-2 border-charcoal border-t-transparent rounded-full animate-spin" />
@@ -194,7 +194,7 @@ const ProductCard = ({ product, index }: { product: Product; index: number }) =>
               >
                 <Heart 
                   size={18} 
-                  className={isWishlisted ? 'fill-gold text-gold' : 'text-cream'} 
+                  className={isWishlisted ? 'fill-amber-600 text-amber-600' : 'text-cream'} 
                   strokeWidth={1.5}
                 />
               </motion.button>
@@ -225,7 +225,7 @@ const ProductCard = ({ product, index }: { product: Product; index: number }) =>
           <p className="text-xs tracking-wider uppercase text-muted-gray">
             {product.category}
           </p>
-          <h3 className="font-serif text-lg font-light text-charcoal group-hover:text-gold transition-colors duration-300">
+          <h3 className="font-serif text-lg font-light text-charcoal group-hover:text-amber-600 transition-colors duration-300">
             {product.name}
           </h3>
           <div className="flex items-center gap-2">
@@ -236,7 +236,7 @@ const ProductCard = ({ product, index }: { product: Product; index: number }) =>
           </div>
           {product.rating && (
             <div className="flex items-center gap-1">
-              <Star size={12} className="fill-gold text-gold" />
+              <Star size={12} className="fill-amber-600 text-amber-600" />
               <span className="text-xs text-muted-gray">{product.rating}</span>
             </div>
           )}
@@ -300,19 +300,19 @@ export default function ProductsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 md:mb-16"
         >
-          <span className="inline-block text-xs md:text-sm tracking-[0.2em] uppercase text-gold mb-3">
+          <span className="inline-block text-xs md:text-sm tracking-[0.2em] uppercase text-amber-600 mb-3">
             Curated For You
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-light text-charcoal">
             New{' '}
-            <span className="relative italic text-gold font-medium inline-block">
+            <span className="relative italic text-amber-600 font-medium inline-block">
               Arrivals
               <motion.span
                 initial={{ width: 0, opacity: 0 }}
                 whileInView={{ width: '100%', opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-gold/0 via-gold to-gold/0"
+                className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-amber-600/0 via-amber-600 to-amber-600/0"
               />
             </span>
           </h2>
@@ -336,7 +336,7 @@ export default function ProductsSection() {
               className={`px-6 py-2 rounded-full text-sm font-medium tracking-wide transition-all duration-300 ${
                 activeFilter === filter.id
                   ? 'bg-charcoal text-cream shadow-lg'
-                  : 'bg-transparent border border-charcoal/20 text-charcoal hover:border-gold hover:text-gold'
+                  : 'bg-transparent border border-charcoal/20 text-charcoal hover:border-amber-600 hover:text-amber-600'
               }`}
             >
               {filter.label}
@@ -380,7 +380,7 @@ export default function ProductsSection() {
           >
             <Link
               href="/collections"
-              className="group inline-flex items-center gap-2 text-sm tracking-[0.2em] uppercase text-charcoal hover:text-gold transition-colors duration-300 border-b border-transparent hover:border-gold pb-1"
+              className="group inline-flex items-center gap-2 text-sm tracking-[0.2em] uppercase text-charcoal hover:text-amber-600 transition-colors duration-300 border-b border-transparent hover:border-amber-600 pb-1"
             >
               <span>View All Products</span>
               <ShoppingBag 

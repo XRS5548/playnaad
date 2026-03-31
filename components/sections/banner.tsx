@@ -78,26 +78,26 @@ export default function BrandStory() {
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Subtle Gradient Overlay */}
-        <div className="absolute inset-0 bg-linear-to-br from-gold/5 via-transparent to-gold/5" /> {/* Changed from bg-gradient-to-br */}
+        <div className="absolute inset-0 bg-linear-to-br from-amber-600/5 via-transparent to-amber-600/5" /> {/* Changed from bg-gradient-to-br */}
         
         {/* Decorative Circles */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.1, scale: 1 }}
           transition={{ duration: 1.5, delay: 0.2 }}
-          className="absolute -top-40 -right-40 w-80 h-80 rounded-full border border-gold/30"
+          className="absolute -top-40 -right-40 w-80 h-80 rounded-full border border-amber-600/30"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.08, scale: 1 }}
           transition={{ duration: 1.5, delay: 0.5 }}
-          className="absolute -bottom-60 -left-40 w-125 h-125 rounded-full border-2 border-gold/20" // Changed from w-[500px] h-[500px]
+          className="absolute -bottom-60 -left-40 w-125 h-125 rounded-full border-2 border-amber-600/20" // Changed from w-[500px] h-[500px]
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.05, scale: 1 }}
           transition={{ duration: 1.5, delay: 0.8 }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full border border-gold/10" // Changed from w-[600px] h-[600px]
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full border border-amber-600/10" // Changed from w-[600px] h-[600px]
         />
         
         {/* Large Faded Quote Icon */}
@@ -118,11 +118,11 @@ export default function BrandStory() {
           >
             {/* Small Tag */}
             <motion.div variants={itemVariants} className="inline-flex items-center gap-3">
-              <div className="w-8 h-px bg-gold" />
-              <span className="text-xs tracking-[0.2em] uppercase text-gold font-medium">
+              <div className="w-8 h-px bg-amber-600" />
+              <span className="text-xs tracking-[0.2em] uppercase text-amber-600 font-medium">
                 Our Philosophy
               </span>
-              <Sparkles size={12} className="text-gold" />
+              <Sparkles size={12} className="text-amber-600" />
             </motion.div>
 
             {/* Main Heading */}
@@ -131,13 +131,13 @@ export default function BrandStory() {
               className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light text-cream leading-[1.2]"
             >
               Crafted with{' '}
-              <span className="relative italic text-gold font-medium inline-block">
+              <span className="relative italic text-amber-600 font-medium inline-block">
                 intention
                 <motion.span
                   initial={{ width: 0 }}
                   animate={isInView ? { width: '100%' } : { width: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="absolute -bottom-2 left-0 h-0.5 bg-gold/40" // Changed from h-[2px]
+                  className="absolute -bottom-2 left-0 h-0.5 bg-amber-600/40" // Changed from h-[2px]
                 />
               </span>
             </motion.h2>
@@ -158,7 +158,7 @@ export default function BrandStory() {
             <motion.div variants={itemVariants}>
               <Link
                 href="/our-story"
-                className="group inline-flex items-center gap-3 px-8 py-3 border-2 border-gold text-gold rounded-full text-sm font-medium tracking-wide transition-all duration-300 hover:bg-gold hover:text-charcoal"
+                className="group inline-flex items-center gap-3 px-8 py-3 border-2 border-amber-600 text-amber-600 rounded-full text-sm font-medium tracking-wide transition-all duration-300 hover:bg-amber-600 hover:text-charcoal"
               >
                 <span>Discover Our Story</span>
                 <ArrowRight
@@ -174,7 +174,7 @@ export default function BrandStory() {
               variants={itemVariants}
               className="pt-6"
             >
-              <div className="w-16 h-px bg-linear-to-r from-gold/50 to-transparent" /> {/* Changed from bg-gradient-to-r */}
+              <div className="w-16 h-px bg-linear-to-r from-amber-600/50 to-transparent" /> {/* Changed from bg-gradient-to-r */}
             </motion.div>
           </motion.div>
 
@@ -194,7 +194,7 @@ export default function BrandStory() {
               >
                 {/* Vertical Divider Line */}
                 {index % 2 === 0 && (
-                  <div className="absolute -left-4 top-0 bottom-0 w-px bg-linear-to-b from-gold/30 via-gold/10 to-transparent hidden md:block" /> /* Changed from bg-gradient-to-b */
+                  <div className="absolute -left-4 top-0 bottom-0 w-px bg-linear-to-b from-amber-600/30 via-amber-600/10 to-transparent hidden md:block" /> /* Changed from bg-gradient-to-b */
                 )}
                 
                 <div className="space-y-2 text-center md:text-left">
@@ -202,7 +202,7 @@ export default function BrandStory() {
                     initial={{ scale: 0.5, opacity: 0 }}
                     animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.5, opacity: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                    className="text-3xl sm:text-4xl md:text-5xl font-serif font-light text-gold"
+                    className="text-3xl sm:text-4xl md:text-5xl font-serif font-light text-amber-600"
                   >
                     {stat.value}
                   </motion.div>
@@ -217,7 +217,7 @@ export default function BrandStory() {
                 </div>
 
                 {/* Hover Effect Line */}
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-gold/20 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <div className="absolute bottom-0 left-0 right-0 h-px bg-amber-600/20 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               </motion.div>
             ))}
           </motion.div>
@@ -225,7 +225,7 @@ export default function BrandStory() {
       </div>
 
       {/* Bottom Decorative Border */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-gold/30 to-transparent" /> {/* Changed from bg-gradient-to-r */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-amber-600/30 to-transparent" /> {/* Changed from bg-gradient-to-r */}
     </section>
   );
 }

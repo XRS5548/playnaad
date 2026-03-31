@@ -147,7 +147,7 @@ export default function PopupModal({ delay = 2000, dismissDuration = 7 }: PopupM
               {/* Close Button */}
               <button
                 onClick={handleClose}
-                className="absolute top-4 right-4 z-20 p-2 rounded-full bg-charcoal/10 hover:bg-charcoal/20 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-gold/50"
+                className="absolute top-4 right-4 z-20 p-2 rounded-full bg-charcoal/10 hover:bg-charcoal/20 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-amber-600/50"
                 aria-label="Close popup"
               >
                 <X size={18} className="text-charcoal" strokeWidth={1.5} />
@@ -170,8 +170,8 @@ export default function PopupModal({ delay = 2000, dismissDuration = 7 }: PopupM
                   {/* Text Content on Image - Now clearly visible */}
                   <div className="absolute bottom-0 text-white left-0 right-0 p-6 text-cream">
                     <div className="flex items-center gap-2 mb-2">
-                      <Gift size={20} className="text-gold" strokeWidth={1.5} />
-                      <span className="text-xs tracking-wider uppercase text-gold">Limited Time Offer</span>
+                      <Gift size={20} className="text-amber-600" strokeWidth={1.5} />
+                      <span className="text-xs tracking-wider uppercase text-amber-600">Limited Time Offer</span>
                     </div>
                     <h3 className="text-xl md:text-2xl font-serif font-light mb-1">
                       Exclusive Deal
@@ -307,7 +307,7 @@ export default function PopupModal({ delay = 2000, dismissDuration = 7 }: PopupM
                 </div>
               </div>
 
-              {/* Gold Accent Border */}
+              {/* amber-600 Accent Border */}
               <div className="absolute inset-0 pointer-events-none rounded-2xl border" style={{ borderColor: 'rgba(198, 164, 59, 0.2)' }} />
             </motion.div>
           </motion.div>

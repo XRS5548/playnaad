@@ -72,7 +72,7 @@ const FooterSection = ({ title, links }: { title: string; links: Array<{ name: s
           <li key={link.name}>
             <Link
               href={link.href}
-              className="group inline-flex items-center text-sm text-muted-gray transition-all duration-300 hover:text-gold"
+              className="group inline-flex items-center text-sm text-muted-gray transition-all duration-300 hover:text-amber-600"
             >
               <ChevronRight size={12} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
               <span className="group-hover:translate-x-1 transition-transform duration-300">
@@ -94,7 +94,7 @@ const SocialIcon = ({ icon: Icon, href, name }: { icon: React.ElementType; href:
       target="_blank"
       rel="noopener noreferrer"
       aria-label={name}
-      className="p-2 text-muted-gray transition-all duration-300 hover:text-gold hover:scale-110 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-gold/50 rounded-full"
+      className="p-2 text-muted-gray transition-all duration-300 hover:text-amber-600 hover:scale-110 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-amber-600/50 rounded-full"
     >
       <Icon size={18} strokeWidth={1.5} />
     </a>
@@ -104,7 +104,7 @@ const SocialIcon = ({ icon: Icon, href, name }: { icon: React.ElementType; href:
 // Payment Method Badge
 const PaymentBadge = ({ name, icon, color }: { name: string; icon: string; color: string }) => {
   return (
-    <div className={`flex items-center gap-2 px-3 py-1.5 bg-linear-to-br ${color} rounded-lg backdrop-blur-sm border border-white/10 transition-all duration-300 hover:border-gold/30 hover:scale-105`}>
+    <div className={`flex items-center gap-2 px-3 py-1.5 bg-linear-to-br ${color} rounded-lg backdrop-blur-sm border border-white/10 transition-all duration-300 hover:border-amber-600/30 hover:scale-105`}>
       <span className="text-lg">{icon}</span>
       <span className="text-xs font-medium text-muted-gray">{name}</span>
     </div>
@@ -161,16 +161,16 @@ const NewsletterSignup = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Your email address"
-            className="w-full px-4 py-3 pr-12 text-sm bg-white/5 border border-white/10 rounded-lg text-soft-white placeholder-muted-gray/50 focus:outline-none focus:border-gold/50 focus:ring-2 focus:ring-gold/20 transition-all duration-300"
+            className="w-full px-4 py-3 pr-12 text-sm bg-white/5 border border-white/10 rounded-lg text-soft-white placeholder-muted-gray/50 focus:outline-none focus:border-amber-600/50 focus:ring-2 focus:ring-amber-600/20 transition-all duration-300"
             disabled={status === 'loading'}
           />
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 text-gold hover:text-gold/80 transition-colors duration-300 disabled:opacity-50"
+            className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 text-amber-600 hover:text-amber-600/80 transition-colors duration-300 disabled:opacity-50"
           >
             {status === 'loading' ? (
-              <div className="w-4 h-4 border-2 border-gold border-t-transparent rounded-full animate-spin" />
+              <div className="w-4 h-4 border-2 border-amber-600 border-t-transparent rounded-full animate-spin" />
             ) : (
               <Send size={16} />
             )}
@@ -216,7 +216,7 @@ export default function Footer() {
       }`}
     >
       {/* Top Gradient Border */}
-      <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-gold/30 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-amber-600/30 to-transparent" />
       
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
@@ -227,7 +227,7 @@ export default function Footer() {
           <div className="space-y-6 lg:col-span-1">
             <Link href="/" className="inline-block group">
               <h2 className="text-3xl font-serif tracking-[0.2em] font-light">
-                PLAY<span className="text-gold font-medium">NAAD</span>
+                PLAY<span className="text-amber-600 font-medium">NAAD</span>
               </h2>
             </Link>
             <p className="text-sm text-muted-gray leading-relaxed">
@@ -269,7 +269,7 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <p className="text-xs text-muted-gray tracking-wide">
               © {currentYear} Playnaad. All rights reserved. Made with{' '}
-              <Heart size={10} className="inline text-gold fill-gold" /> in India
+              <Heart size={10} className="inline text-amber-600 fill-amber-600" /> in India
             </p>
           </div>
 
@@ -284,19 +284,19 @@ export default function Footer() {
         {/* Additional Legal Links */}
         <div className="mt-8 pt-6 border-t border-white/5 text-center">
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-muted-gray/70">
-            <Link href="/privacy-policy" className="hover:text-gold transition-colors duration-300">
+            <Link href="/privacy-policy" className="hover:text-amber-600 transition-colors duration-300">
               Privacy Policy
             </Link>
             <span className="text-white/20">•</span>
-            <Link href="/terms-of-service" className="hover:text-gold transition-colors duration-300">
+            <Link href="/terms-of-service" className="hover:text-amber-600 transition-colors duration-300">
               Terms of Service
             </Link>
             <span className="text-white/20">•</span>
-            <Link href="/cookie-policy" className="hover:text-gold transition-colors duration-300">
+            <Link href="/cookie-policy" className="hover:text-amber-600 transition-colors duration-300">
               Cookie Policy
             </Link>
             <span className="text-white/20">•</span>
-            <Link href="/sitemap" className="hover:text-gold transition-colors duration-300">
+            <Link href="/sitemap" className="hover:text-amber-600 transition-colors duration-300">
               Sitemap
             </Link>
           </div>
@@ -304,7 +304,7 @@ export default function Footer() {
       </div>
 
       {/* Decorative Bottom Line */}
-      <div className="h-px w-full bg-linear-to-r from-transparent via-gold/20 to-transparent" />
+      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/20 to-transparent" />
     </footer>
   );
 }
